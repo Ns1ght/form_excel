@@ -1,0 +1,21 @@
+<div class="po-page">
+  <div class="logo-container">
+    <img src="../../../../assets/images/login-page-logo.png" class="logo" />
+  </div>
+
+  <div class="po-page-content">
+    <po-page-login
+      (p-login-submit)="login($event)"
+      [p-recovery]="this.passwordRecovery.bind(this)"
+      p-hide-remember-user
+    >
+    </po-page-login>
+  </div>
+</div>
+
+<po-modal-password-recovery
+  #passwordRecoveryModal
+  (p-submit)="submitPasswordRecovery($event)"
+> </po-modal-password-recovery>
+
+<po-loading-overlay *ngIf="isLoading"></po-loading-overlay>

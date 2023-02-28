@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+  database: 
+    image: postgres
+    container_name: database_basic
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=basic_user
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=basic_db
+    volumes:
+      - pgdata:/data/postgres
+
+  redis:
+    image: redis:alpine
+    container_name: redis_basic
+    ports: 
+      - 6379:6379
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,30 @@
+<po-page-default p-title="Cidades" [p-actions]="pageActions">
+  <form [formGroup]="cidadeForm">
+    <div class="po-sm-12 po-md-12 po-lg-12 po-xl-12 no-padding">
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-required"
+        formControlName="nome"
+        name="nome"
+        p-clean
+        p-label="Nome"
+        p-maxlength="100"
+        [p-readonly]="readonly"
+        p-required
+      > </po-input>
+    </div>
+
+    <div class="po-sm-12 po-md-12 po-lg-12 po-xl-12 no-padding">
+      <po-combo
+        class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-required"
+        formControlName="estadoId"
+        name="estadoId"
+        p-clean
+        [p-disabled]="readonly"
+        [p-filter-service]="estadoIdService"
+        p-label="UF"
+        p-required
+      > </po-combo>
+    </div>
+
+  </form>
+</po-page-default>

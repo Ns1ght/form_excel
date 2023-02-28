@@ -1,0 +1,30 @@
+<po-page-default p-title="Estados" [p-actions]="pageActions">
+  <form [formGroup]="estadoForm">
+    <div class="po-sm-12 po-md-12 po-lg-12 po-xl-12 no-padding">
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-required"
+        formControlName="nome"
+        name="nome"
+        p-clean
+        p-label="Nome"
+        p-maxlength="100"
+        [p-readonly]="readonly"
+        p-required
+      > </po-input>
+    </div>
+
+    <div class="po-sm-12 po-md-12 po-lg-12 po-xl-12 no-padding">
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-6 po-xl-6 po-required"
+        formControlName="uf"
+        name="uf"
+        p-clean
+        p-label="UF"
+        p-maxlength="2"
+        [p-readonly]="readonly"
+        p-required
+      > </po-input>
+    </div>
+
+  </form>
+</po-page-default>
